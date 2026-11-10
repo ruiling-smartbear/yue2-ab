@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YuE2 A/B</title>
+<style>
+  :root { --bg:#f5f3ee; --card:#fff; --ink:#1c1c1e; --mute:#6e6e73; --line:#e3e0d8; --accent:#2f6f5e; --soft:#e7f1ed; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#151516; --card:#1e1e20; --ink:#f2f2f2; --mute:#a1a1a6; --line:#323235; --accent:#74c7ad; --soft:#1f302b; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 -apple-system, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif; -webkit-text-size-adjust:100%; }
+  main { max-width:680px; margin:0 auto; padding:28px 16px 40px; }
+  h1 { font-size:24px; margin:0 0 2px; }
+  .sub { color:var(--mute); margin:0 0 22px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; margin:0 0 14px; }
+  .title { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .zh { font-size:18px; font-weight:700; }
+  .en { color:var(--mute); font-size:14px; }
+  summary { cursor:pointer; color:var(--mute); font-size:13px; margin-top:4px; }
+  pre { white-space:pre-wrap; word-break:break-word; font:14px/1.7 inherit; color:var(--mute); margin:8px 0 0; max-height:220px; overflow:auto; }
+  .track { display:flex; align-items:center; gap:10px; margin-top:12px; }
+  .letter { flex:none; width:32px; height:32px; border-radius:50%; background:var(--soft); color:var(--accent); font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .who { flex:none; font-size:13px; color:var(--accent); font-weight:600; display:none; }
+  .revealed .who { display:block; }
+  audio { flex:1; min-width:0; height:40px; }
+  button { display:block; margin:22px auto 0; font:inherit; font-size:15px; border-radius:999px; padding:8px 22px; border:1px solid var(--accent); background:transparent; color:var(--accent); cursor:pointer; }
+</style>
+</head>
+<body>
+<main>
+  <h1>YuE2 A/B</h1>
+  <p class="sub">同一首歌，两种生成方式。</p>
+  <div id="list"></div>
+  <button id="reveal">揭晓答案</button>
+</main>
+<script>
+const SONGS = [{"n": 1, "zh": "爵士 R&B", "en": "Jazz R&B", "lyrics": "[Intro: Fast bebop saxophone run, upright bass walking line, brushed snare swing]\n\n[Verse 1]\n冰在杯底裂成两半\n屏幕又暗了 第七次\n我踩着钢琴左手的错拍\n假装那通未接 是错觉\n\n[Pre-Chorus]\n酒保擦杯太有节奏\n压不住萨克斯突然离调\n那段你说太疯的十六分\n现在只剩我吹\n\n[Chorus]\nYou said you’d call tonight\nBut the signal got lost in the skyline\nI’m the blur in the neon glow\nWhere the streetlights don’t go\nYou said you’d call tonight\nBut the tower switched your line\nI toast the air with empty glass\nAnd tuck your busy tone\nInto the syncopated cracks\n\n[Verse 2]\n空调吹散烟圈形状\n像你留言尾音 飘向窗\n邻座问这歌有没有名字\nI say it’s just a hum\nNo title\n\n[Pre-Chorus]\nBut the clock froze at 1 a.m.\nSame second your line went dead\nToo quiet\nEven the city looked away\n\n[Chorus]\nYou said you’d call tonight\nBut the signal got lost in the skyline\nI’m the blur in the neon glow\nWhere the streetlights don’t go\nYou said you’d call tonight\nBut the tower switched your line\nI toast the air with empty glass\nAnd tuck your busy tone\nInto the syncopated cracks\n\n[Bridge: Upright bass solo with syncopated drum accents]\n(whispered)\nI know your phone’s still on\nJust not for me\nThis frequency expired\nLast Tuesday\n\n[Chorus]\nYou said you’d call tonight\nNow I feed on silence instead\nSwing alone through every bar\nWith your ghost in my head\nYou said you’d call tonight\nBut even lies need effort\nI raise this empty to the dark\nTo the call\nThat’s always\n0.1 seconds\nFrom connecting\n\n[Outro: Saxophone improvisation fades into vinyl crackle and distant city hum]", "tracks": [{"letter": "A", "src": "audio/s1-a.m4a"}, {"letter": "B", "src": "audio/s1-b.m4a"}]}, {"n": 2, "zh": "放克迪斯科", "en": "Funk Disco", "lyrics": "[Intro: Punchy drum machine and bouncy bassline, shimmering synth stabs]\n\n[Verse 1]\n你靠在墙边 把裙角抚平三次\n指尖跟着鼓点 在空气里写字\n我递错饮料 水珠滑落手腕\n你笑说没关系 像习以为常的夜晚\n\n[Pre-Chorus]\n灯光扫过侧脸 你忽然旋身\n发尾甩出弧线 切开拥挤人群\n\n[Chorus]\nYOU’RE A DIAMOND IN THE DISCO LIGHT!\nSPARKLING BRIGHT WHEN NO ONE’S LOOKING RIGHT!\nI WAS BLIND BUT NOW I SEE YOU SHINE—\nGOTTA CLAIM WHAT’S ALWAYS BEEN MINE!\n\n[Verse 2]\n旧唱片循环 播着同一段副歌\n你踮脚转圈 脚印连成银河\n人浪推近 又退成安全距离\n这次我跨步 不再假装看别处\n\n[Pre-Chorus]\n镜球碎成星雨 落在你锁骨\n心跳盖过鼓点 再不用躲藏\n\n[Chorus]\nYOU’RE A DIAMOND IN THE DISCO LIGHT!\nSPARKLING BRIGHT WHEN NO ONE’S LOOKING RIGHT!\nI WAS BLIND BUT NOW I SEE YOU SHINE—\nGOTTA CLAIM WHAT’S ALWAYS BEEN MINE!\n\n[Inst: Funk guitar riff and syncopated bass groove, handclaps on offbeats]\n\n[Bridge]\n别让这曲终了 别退回暗处\n你的光不该等谁才肯显露\n\n[Chorus]\nYOU’RE A DIAMOND IN THE DISCO LIGHT!\nSPARKLING BRIGHT WHEN NO ONE’S LOOKING RIGHT!\nI WAS BLIND BUT NOW I SEE YOU SHINE—\nGOTTA CLAIM WHAT’S ALWAYS BEEN MINE!\n\n[Outro: Drums fade with cowbell, synth glissando upward]\n(ALWAYS BEEN MINE!)\n(YEAH, YOU’RE MY TREASURE!)", "tracks": [{"letter": "A", "src": "audio/s2-a.m4a"}, {"letter": "B", "src": "audio/s2-b.m4a"}]}, {"n": 3, "zh": "乡村", "en": "Country", "lyrics": "[Verse 1]\nBanjos pickin', a happy tune..\n...i need to be in amarillo by noon.\n\n[Verse 2]\nMy wife by my side i am a songster king! But...\n\n[Verse 3]\nTomorrow i must rise... Before the roosters crooounnn, 'cause i need to be in amarillo by noon. In amarillo By Noon...\n\n[Verse 4]\nLets go to bed early darlin', cause i need to be in amarillo by by Noon.!\n\n[Verse 5]\n.. i must kiss you goodnight my Darlin, now... 'cause i need to be in amarillo by noon.\n\n[Verse 6]\ngood night my darlin' , god bless you toooo... I need to rise early to be in Amarillo by noon... Amarillo by noon..\n\n[Verse 7]\nWhen you wake tomorrow darlin' i'll be long gone...\n\n[Chorus 1]\nLong gone long gone...\n\n[Chorus 2]\nLong gone. long gone. Looooong goo onnneee.\n\n[Verse 8]\nRidin' high on my Truck to get there by noon ...\nAmarillo by noon...\n\n[Verse 9]\nI'll rise early to be home again by night.. soo good night my Darling... God bless you 'an good night.\n\n[Verse 10]\nBanjo pickin',  guitars singing' sweet.\nmy beautyful wife by my side, i feel like a king,! Like a kiing ...\n\n[Verse 11]\nIm treated like a king in my home by my wife, 'cause my riding the lonesome trucking road all day 'an sometimes through the dark, dark, dark 'n cold. lonsesome night!\n\n[Chorus 3]\nlonsesome night! lonsesome night! loooonsesome niight!\n\n[Verse 12]\nShe's my light, and the Queen of my heart.... She's real cute, and a warm mother to our kids and she's real real smart...\n\n[Verse 13]\nShe's the shining Queen of my heart... Of my lonesome, lone road trucker heart...\n\n[Verse 14]\nShe's my light, and the Queen of my heart.... She's real cute, 'n a warm warm mother to our kids and she's real real smart!... \n\n[Verse 15]\nShe's the shining Queen of my heart... Of my lonesome, loan loan  road trucker heart...\n\n[Outro]\n...my lonesome, loan loan load trucker heart...\n\nBanjos pickin must now end cause i must go to bed!... To be in Amarillo by high-Noon. Byee Nooon!....\n\n[Verse 16]\nShe's the shining Queen of my heart... Of my lonesome, loan road truckin' heart...\n\n[Verse 17]\n..' an if i make Amarillo by noooonnn... I'll be for sure home tonight... \n\n[Verse 18]\n...an she'll be in my arms... In my strong loan road truckers arms...\nYahooo... Lone road,  my loan road loving Arms...", "tracks": [{"letter": "A", "src": "audio/s3-a.m4a"}, {"letter": "B", "src": "audio/s3-b.m4a"}]}, {"n": 4, "zh": "嘻哈", "en": "Hip-Hop", "lyrics": "[Verse]\nWoke up cold streets ain't kind\nDreams in my pocket can't leave 'em behind\nBrick walls echo with a siren's cry\nI'm runnin' but my shoes feel tied\n\n[Chorus]\nTryna stay alive tryna keep my stride\nWorld's so heavy but I won't collide\nTryna stay alive ain't got no guide\nJust me and the beat and the fire inside\n\n[Verse 2]\nCity lights blink like they got no soul\nDodgin' shadows where the dealers roll\nGot my hoodie up keep my head down low\nOne wrong step and it's all you know\n\n[Prechorus]\nThe block whispers stories it don't forget\nEvery choice a gamble every breath a bet\n\n[Chorus]\nTryna stay alive tryna keep my stride\nWorld's so heavy but I won't collide\nTryna stay alive ain't got no guide\nJust me and the beat and the fire inside\n\n[Bridge]\nSidewalk cracks spell out my name\nEach step forward plays a dangerous game\nThe grind won't stop it's all I claim\nBut this life this life it ain't tame", "tracks": [{"letter": "A", "src": "audio/s4-a.m4a"}, {"letter": "B", "src": "audio/s4-b.m4a"}]}, {"n": 5, "zh": "重金属抒情", "en": "Heavy Metal Ballad", "lyrics": "[Intro]\n\n[Verse 1]\n                    \nWe light our hearts like cigarette flames\n                    \nBurning slow in forgotten names\n                   \nTrading truth for a moment’s delight\n                    \nWe are the fools of the night\n\n[Verse 2]\n                    \nWe dance in alleys the daylight denies\n                    \nChasing echoes and neon lies\n                   \nOur shadows stretch past wrong and right\n                    \nWe are the fools of the night\n\n[Chorus]\n                    \nAnd we know the stars won’t save us\n                    \nBut we still make a wish\n                    \nOn every broken sky\n                    \nWe live, we lose, we try\n                    \nAnd the night, it knows our names\n                    \nIt holds us in its light\n                    \nWe are the dreamers, the drifters\n                    \nWe are the fools of the night\n\n[Verse 3]\n                    \nWe write our stories on barroom walls\n                    \nIn lipstick, laughter, and late-night calls\n                   \nThe morning erases what felt so right\n                    \nBut we are the fools of the night\n\n[Outro]\n (let ring…)", "tracks": [{"letter": "A", "src": "audio/s5-a.m4a"}, {"letter": "B", "src": "audio/s5-b.m4a"}]}, {"n": 6, "zh": "木吉他慢歌", "en": "Acoustic Ballad", "lyrics": "[Verse 1]\n\nHe was a shadow in the sunrise,\nEyes like storms that never fade.\nHe spoke in whispers, soft and wordless,\nAnd every word he left me stayed.\n\n[Verse 2]\n\nThey say his heart grew cold with time,\nThat love had turned his soul to stone.\nBut when he smiled, it felt divine,\nAnd I forgot I was alone.\n\n[silence]\nI felt free because—\n\n[Chorus 1]\n\nHe’d never let me down,\nHe’d set my grief on fire.\nHe wore a broken crown,\nHe was my one desire.\n\n[Post Chorus 1]\nHe’s holy... holy...\nGeorge’s prayer,\nThe fallen savior,\nHe’s fading slowly out to sea.\n\n[instrumental]\n\n[Verse 3]\n\nHe was a poet, a lost believer,\nA saint in ashes, down on his knees.\nHe was a sinner, but no deceiver,\nHe gave his pain like prophecy.\n\n[silence]\nNow he’s free.\n\n[Chorus 2]\n\nHe’ll never let me down,\nHe’s gone, but burns like amber.\nHe’ll never leave this town,\nHis ghost is what I remember.\n\n[Post Chorus 2]\nHe’s holy... holy...\nGeorge’s prayer,\nThe fallen savior,\nHe’s drifting softly out to sea.\n\n[Pre-Bridge]\nHoly... holy...\nGeorge’s prayer,\nIf you still see him,\nSend my love from me.\n\n[instrumental]\n\n[Bridge]\n\nHoly dreamer, fading teacher,\nThe sky is crying over you.\nKeeper of the lost believers,\nHold your flame and see it through.\nBecause you’re holy... holy...\nYou’re holy... holy...\n\n[Chorus / Outro]\n\nHoly... holy...\nGeorge’s prayer,\nThe fallen savior,\nHe’s sinking slowly to the sea.\nHoly... holy...\nGeorge’s prayer,\nIf you still see him,\nSay goodbye for me.", "tracks": [{"letter": "A", "src": "audio/s6-a.m4a"}, {"letter": "B", "src": "audio/s6-b.m4a"}]}];
+const ANSWER = {"s1-A": "ref", "s1-B": "new", "s2-A": "new", "s2-B": "ref", "s3-A": "new", "s3-B": "ref", "s4-A": "ref", "s4-B": "new", "s5-A": "ref", "s5-B": "new", "s6-A": "new", "s6-B": "ref"};
+const NAMES = { new: "SGLang", ref: "官方" };
+const list = document.getElementById("list");
+function el(tag, cls, text) {
+  const node = document.createElement(tag);
+  if (cls) node.className = cls;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+for (const song of SONGS) {
+  const card = el("section", "card");
+  const title = el("div", "title");
+  title.append(el("span", "zh", song.zh), el("span", "en", song.en));
+  card.append(title);
+  const details = el("details");
+  details.append(el("summary", "", "歌词"), el("pre", "", song.lyrics));
+  card.append(details);
+  for (const track of song.tracks) {
+    const row = el("div", "track");
+    const audio = el("audio");
+    audio.controls = true; audio.preload = "none"; audio.src = track.src;
+    audio.addEventListener("play", () => { for (const other of document.querySelectorAll("audio")) if (other !== audio) other.pause(); });
+    row.append(el("span", "letter", track.letter), audio, el("span", "who", NAMES[ANSWER["s" + song.n + "-" + track.letter]]));
+    card.append(row);
+  }
+  list.append(card);
+}
+document.getElementById("reveal").addEventListener("click", event => {
+  document.body.classList.add("revealed");
+  event.target.remove();
+});
+</script>
+</body>
+</html>
